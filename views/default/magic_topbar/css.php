@@ -1,7 +1,18 @@
-#elgg_topbar{
+<?php
+/**
+ * Magic Topbar CSS
+ *
+ * @package ElggMagicTopbar
+*/
+?>
+
+/* Magic Topbar Plugin */
+
+.elgg-page-topbar{
 	position: fixed;
-	margin: -24px 0 0;
+	width:100%;
+	margin-top: -24px;
 }
-#page_container {
-	margin: 24px 0 0;
+.elgg-page-header {
+	margin-top: 24px;
 }

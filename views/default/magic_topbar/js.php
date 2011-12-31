@@ -1,10 +1,18 @@
-<script>
+<?php
+/**
+ * Hide the topbar when no using with an animation.
+ *
+ * @package ElggMagicTopbar
+ */
+?>
+
 $(function() {
 
-    var $topbar   = $("#elgg_topbar"),
-        $window    = $(window);
+    var $topbar   = $(".elgg-page-topbar"),
+        $window   = $(window),
+        ontop     = false;
 
-    $('#page_container').css({'margin-top':'24px'});
+    $('.elgg-page-header').css({'margin-top':'24px'});
     $topbar.css({'position':'fixed', 'margin-top':'-24px'});
 
     $window.scroll(function() {
@@ -13,13 +21,12 @@ $(function() {
 	var top = $window.scrollTop();
 	var opacity;
 	if(top>14){
-		top = 14;
-		opacity = 0.4;
+		$topbar.animate({opacity:0.4, marginTop:-24-14}, 'fast');
 	}
 	else{
-		opacity = 1;
+		$topbar.css({opacity:1, marginTop:-24-top});
 	}
-	$topbar.animate({opacity:opacity, marginTop:-24-top}, 'fast');
+	
 	
     });
 
@@ -43,4 +50,3 @@ $(function() {
     });
 
 });
-</script>

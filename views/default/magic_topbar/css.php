@@ -11,8 +11,8 @@
 .elgg-page-topbar{
 	position: fixed;
 	width:100%;
-	margin-top: -24px;
 }
 .elgg-page-header {
-	margin-top: 24px;
+	margin-top: 0px;
+	padding-top: 24px;
 }
